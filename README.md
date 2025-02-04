@@ -8,4 +8,4 @@ Or navigate to the workspaces folder and run
 `go run main.go`
 
 ### Analysis
-Detailed report can be accessed here: ![Click me!](REPORT.MD)
+Detailed report can be accessed here: [Click me!](REPORT.MD)
