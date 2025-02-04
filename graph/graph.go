@@ -15,7 +15,7 @@ type Path struct {
 }
 
 type Graph struct {
-	AdjacencyList map[Node][]Node
+	AdjacencyList map[Node][]Node // we initialize adjacency list for easier neighbour lookup
 	Edges         map[Node]map[Node]Path
 }
 

@@ -11,6 +11,7 @@ func tspGraphInit(g *Graph, keyNodes []Node, startNode *Node) *Graph {
 		Edges:         make(map[Node]map[Node]Path),
 	}
 
+	//connect each dirt node with each other and the start node
 	nodes := append(keyNodes, *startNode)
 	for i := 0; i < len(nodes); i++ {
 		for j := i + 1; j < len(nodes); j++ {
@@ -36,6 +37,7 @@ func tspGraphInit(g *Graph, keyNodes []Node, startNode *Node) *Graph {
 	return distilledGraph
 }
 
+// helper function to reverse an array
 func reverseArray(arr []Node) []Node {
 	n := len(arr)
 	for i := 0; i < n/2; i++ {

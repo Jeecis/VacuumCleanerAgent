@@ -16,6 +16,7 @@ func (g *Graph) bfs(start, goal Node) ([]Node, float64) {
 		current := queue.Remove(queue.Front()).(Node)
 
 		if current == goal {
+			// Reconstruct the path from goal to start
 			path := []Node{}
 			for current != start {
 				path = append([]Node{current}, path...)
@@ -25,6 +26,7 @@ func (g *Graph) bfs(start, goal Node) ([]Node, float64) {
 			return path, float64(len(path) - 1)
 		}
 
+		// Explore the neighbors of the current node
 		for _, neighbor := range g.getNeighbors(current) {
 			if _, ok := cameFrom[neighbor]; !ok {
 				queue.PushBack(neighbor)
@@ -33,5 +35,6 @@ func (g *Graph) bfs(start, goal Node) ([]Node, float64) {
 		}
 	}
 
+	// Return infinity if there is no path from start to goal
 	return nil, math.Inf(1)
 }

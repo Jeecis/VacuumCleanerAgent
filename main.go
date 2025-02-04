@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	vacuumInfo, destilledGraph, err := graph.TaskInit("input.csv")
+	vacuumInfo, destilledGraph, err := graph.TaskInit("input3.csv")
 	if err != nil {
 		log.Fatalf("Error initializing task: %v", err)
 	}
